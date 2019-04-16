@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Table from "./Table.js";
+import axios from "axios";
 
 class App extends Component {
+  state = {
+    data: []
+  };
+
+  componentDidMount() {
+    axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
+      this.setState({
+        data: res.data
+      })
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Table list={this.state.data} paginate={5} search={true} />
       </div>
     );
   }

@@ -1,0 +1,24 @@
+.table {
+  width: 100%;
+
+  .header, .row {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    .col {
+      flex: 1;
+      padding: 1%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &:nth-child(odd) {
+      background-color: #fafafa;
+    }
+  }
+
+  .header {
+    font-weight: bold;
+  }
+}
