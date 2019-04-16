@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import Table from "./Table.js";
 import axios from "axios";
+import Table from "./Table.js";
 
 class App extends Component {
   state = {

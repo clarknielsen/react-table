@@ -46,16 +46,13 @@ function Table(props) {
       {
         // hide search bar
         props.search === false || props.search === null ? null : 
-        <input type="search" value={search} onChange={handleOnChange} />
-      }      
-
-      {
-        // hide page buttons
-        isNaN(props.paginate) ? null : 
-        <React.Fragment>
-          <button disabled={page === 0} onClick={() => setPage(page-props.paginate)}>&lt;</button>
-          <button disabled={page + props.paginate >= filteredList().length} onClick={() => setPage(page+props.paginate)}>&gt;</button>
-        </React.Fragment>
+        <input 
+          className="search" 
+          type="search" 
+          value={search} 
+          placeholder="🔍 Search"
+          onChange={handleOnChange} 
+        />
       }
 
       <div className="header">
@@ -104,8 +101,9 @@ function Table(props) {
                 headers.map((header, j) => {
                   // make sure headers align correctly with row data
                   return (
-                    <div className="col" key={j} title={item[header]}>
-                      {item[header]}
+                    <div className="col" key={j}>
+                      <span className="label">{header}</span>
+                      <span className="text" title={item[header]}>{item[header]}</span>
                     </div>
                   );
                 })
@@ -113,6 +111,24 @@ function Table(props) {
             </div>
           );
         })
+      }
+
+      {
+        // hide page buttons
+        isNaN(props.paginate) ? null : 
+        <div className="nav">
+          <button 
+            className="btn"
+            disabled={page === 0} 
+            onClick={() => setPage(page-props.paginate)}
+          >👈🏽</button>
+          
+          <button 
+            className="btn"
+            disabled={page + props.paginate >= filteredList().length} 
+            onClick={() => setPage(page+props.paginate)}
+          >👉🏽</button>
+        </div>
       }
     </div>
   );
