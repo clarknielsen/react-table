@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/react-table/static/js/runtime~main.84399d2a.js"
   },
   {
-    "revision": "826e98fc19670fd6da06",
+    "revision": "13fe5b7d261105a0305e",
     "url": "/react-table/static/js/main.c5eb6fe7.chunk.js"
   },
   {
@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/react-table/static/js/2.54e86981.chunk.js"
   },
   {
-    "revision": "826e98fc19670fd6da06",
-    "url": "/react-table/static/css/main.70c24a07.chunk.css"
+    "revision": "13fe5b7d261105a0305e",
+    "url": "/react-table/static/css/main.56e67be3.chunk.css"
   },
   {
-    "revision": "c5f7bcfd070617852bf2ccf9625e996e",
+    "revision": "d05774ff56f762aa2952265892445dd4",
     "url": "/react-table/index.html"
   }
 ];
