@@ -93,6 +93,8 @@
         .text, .label {
           display: inline-block;
           flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }
