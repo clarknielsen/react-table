@@ -6,6 +6,7 @@
     flex-direction: row;
     text-align: left;
     clear: both;
+    align-items: center;
 
     .col {
       flex: 1;
@@ -16,6 +17,7 @@
       .label {
         display: none;
         font-weight: bold;
+        font-variant: small-caps;
       }
     }
 
@@ -26,12 +28,22 @@
 
   .header {
     font-weight: bold;
-    cursor: default;
+    font-variant: small-caps;
+    font-size: 110%;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+
+    .col:hover:after {
+      font-size: 80%;
+      float: right;
+      content: " 🔻";
+    }
   }
 
   .search {
     float: right;
     padding: .25%;
+    font-size: inherit;
   }
 
   .nav {
@@ -42,9 +54,11 @@
   .btn {
     padding: .25%;
     cursor: pointer;
+    font-size: inherit;
 
     &[disabled] {
       opacity: .5;
+      cursor: not-allowed;
     }
   }
 }
@@ -53,6 +67,16 @@
   .table {
     .header {
       display: none;
+    }
+
+    .search {
+      float: none;
+      width: 100%;
+      margin-bottom: 3%;
+    }
+
+    .nav .btn {
+      width: 50%;
     }
 
     .row {

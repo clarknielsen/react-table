@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
-import Table from "./Table.js";
+import "./app.scss";
+import Table from "./components/Table.js";
 
 class App extends Component {
   state = {
@@ -8,6 +9,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    // call api
     axios.get("https://jsonplaceholder.typicode.com/users").then((res) => {
       this.setState({
         data: res.data
@@ -18,7 +20,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Table list={this.state.data} paginate={5} search={true} />
+        <h1>React Table Example</h1>
+        <Table list={this.state.data} paginate={5} />
       </div>
     );
   }
